@@ -208,22 +208,24 @@
   }
   
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   
   .hero-text h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   
+  .hero-text p {
+    font-size: 0.85rem;
+  }
+  
+  /* Hide avatar on medium screens too */
   .avatar-container {
-    width: 250px;
-    height: 250px;
+    display: none;
   }
   
   .avatar-placeholder {
-    width: 230px;
-    height: 230px;
-    font-size: 2.5rem;
+    display: none;
   }
 }
 
@@ -559,19 +561,20 @@
 /* Responsive Design - Medium Screens */
 @media (max-width: 768px) and (min-width: 517px) {
   .navbar {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1.2rem;
   }
   
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 1rem;
   }
   
   .nav-link {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
   
   .main-content {
@@ -579,23 +582,35 @@
   }
   
   .page-content h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 1rem;
   }
   
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1rem;
+  }
+  
+  .hero-text p {
+    font-size: 0.85rem;
+  }
+  
+  /* Hide avatar */
+  .avatar-container {
+    display: none;
   }
   
   .avatar-placeholder {
-    width: 150px;
-    height: 150px;
-    font-size: 3rem;
+    display: none;
   }
   
   .experience-item {
@@ -1231,15 +1246,37 @@
 @media (max-width: 768px) and (min-width: 517px) {
   .skills-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
   
   .contact-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .contact-actions {
     flex-direction: column;
+  }
+  
+  .contact-info h3 {
+    font-size: 1rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+  
+  .section-block {
+    padding: 1rem 0.75rem;
+  }
+  
+  .section-block h2 {
+    font-size: 1.5rem;
+  }
+  
+  .section-intro {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }
 
