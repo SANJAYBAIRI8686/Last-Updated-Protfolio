@@ -1242,3 +1242,283 @@
     flex-direction: column;
   }
 }
+
+/* Mobile Responsive Design for Small Screens (320px - 414px) */
+@media (max-width: 414px) {
+  /* Navigation */
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    min-height: calc(100vh - 240px) !important;
+    padding: 1rem 0;
+  }
+  
+  .hero-content {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+  
+  .hero-text h2 {
+    font-size: 1.1rem;
+  }
+  
+  .hero-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .avatar-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .avatar-placeholder {
+    width: 160px;
+    height: 160px;
+    font-size: 2rem;
+  }
+  
+  /* Section Blocks */
+  .section-block {
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Panels */
+  .panel-text {
+    padding: 1rem;
+  }
+  
+  .section-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* Data Journey Cards */
+  .data-journey-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .data-journey-card {
+    padding: 1rem;
+  }
+  
+  .data-journey-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .data-journey-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* Project Grids */
+  .project-grid,
+  .cloud-project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card,
+  .cloud-project-card {
+    padding: 1rem;
+  }
+  
+  .project-card img,
+  .cloud-project-card img {
+    height: 200px;
+  }
+  
+  .project-card h3,
+  .cloud-project-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .project-card p,
+  .cloud-project-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* Experience Cards */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .experience-card {
+    padding: 1rem;
+  }
+  
+  .experience-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .experience-card p {
+    font-size: 0.9rem;
+  }
+  
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .contact-actions .btn-primary,
+  .contact-actions .btn-secondary {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Skills Grid */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Contact Content */
+  .contact-content {
+    gap: 1.5rem;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Devices (320px - 374px) */
+@media (max-width: 374px) {
+  /* Navigation */
+  .navbar {
+    padding: 0.5rem 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .nav-brand h2 {
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    min-height: calc(100vh - 260px) !important;
+  }
+  
+  .hero-content {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 1rem;
+  }
+  
+  .hero-text p {
+    font-size: 0.85rem;
+  }
+  
+  .avatar-container {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avatar-placeholder {
+    width: 130px;
+    height: 130px;
+    font-size: 1.5rem;
+  }
+  
+  /* Section Blocks */
+  .section-block {
+    padding: 1rem 0.75rem;
+  }
+  
+  /* Panels */
+  .panel-text {
+    padding: 0.75rem;
+  }
+  
+  .section-intro {
+    font-size: 0.85rem;
+  }
+  
+  /* Cards */
+  .data-journey-card,
+  .project-card,
+  .cloud-project-card,
+  .experience-card {
+    padding: 0.75rem;
+  }
+  
+  .data-journey-card h3,
+  .project-card h3,
+  .cloud-project-card h3,
+  .experience-card h3 {
+    font-size: 1rem;
+  }
+  
+  .data-journey-card p,
+  .project-card p,
+  .cloud-project-card p,
+  .experience-card p {
+    font-size: 0.8rem;
+  }
+  
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .contact-actions .btn-primary,
+  .contact-actions .btn-secondary {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Grids */
+  .data-journey-cards,
+  .project-grid,
+  .cloud-project-grid,
+  .experience-grid,
+  .skills-grid {
+    gap: 1rem;
+  }
+}
