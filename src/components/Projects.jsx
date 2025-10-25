@@ -646,7 +646,7 @@ This executive-level dashboard provides a clean, high-level overview of total fi
 										<div className="fullstack-card">
 											{src ? (
 												link ? (
-													<a href={link} target="_blank" rel="noreferrer">
+													<a href={link} target="_blank" rel="noopener noreferrer">
 														<img src={src} alt={`Fullstack ${(rIdx * 2) + idx + 1}`} />
 													</a>
 												) : (

@@ -10,6 +10,8 @@ import githubIcon from '../assets/Social Media/github.png';
 import redditIcon from '../assets/Social Media/reddit.png';
 import aumLogo from '../assets/About me logos/AUM college.png';
 import vaagLogo from '../assets/About me logos/Vaag.png';
+import ibmLogo from '../assets/Experience /IBM.png';
+import smartInternzLogo from '../assets/Experience /smart Internz.png';
 
 // Glob imports for all skill images
 const skillImages = import.meta.glob('../assets/About me logos/**/*.{png,svg}', { eager: true, as: 'url' });
@@ -117,7 +119,7 @@ const AboutMe = () => {
               <p className="experience-date">2023 January - 2023 October</p>
             </div>
             <div className="experience-image">
-              <img src="/src/assets/Experience /IBM.png" alt="IBM Experience" className="company-logo" />
+              <img src={ibmLogo} alt="IBM Experience" className="company-logo" />
             </div>
             <div className="experience-details">
               <div className="detail-section">
@@ -144,7 +146,7 @@ const AboutMe = () => {
               <p className="experience-date">January 2022 – December 2022</p>
             </div>
             <div className="experience-image">
-              <img src="/src/assets/Experience /smart Internz.png" alt="Smart Internz Experience" className="company-logo" />
+              <img src={smartInternzLogo} alt="Smart Internz Experience" className="company-logo" />
             </div>
             
             <div className="experience-details">
@@ -181,35 +183,35 @@ const AboutMe = () => {
             <h3>Full Stack Development</h3>
             <div className="skill-cards">
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/Angular.png" alt="Angular" />
+                <img src={getImage('/src/assets/about me logos/Full stack/Angular.png')} alt="Angular" />
                 <span>Angular</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/Bootstrap.png" alt="Bootstrap" />
+                <img src={getImage('/src/assets/about me logos/Full stack/Bootstrap.png')} alt="Bootstrap" />
                 <span>Bootstrap</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/css.png" alt="CSS" />
+                <img src={getImage('/src/assets/about me logos/Full stack/css.png')} alt="CSS" />
                 <span>CSS</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/html.png" alt="HTML" />
+                <img src={getImage('/src/assets/about me logos/Full stack/html.png')} alt="HTML" />
                 <span>HTML</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/Javascript.png" alt="JavaScript" />
+                <img src={getImage('/src/assets/about me logos/Full stack/Javascript.png')} alt="JavaScript" />
                 <span>JavaScript</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/NextJS.png" alt="Next.js" />
+                <img src={getImage('/src/assets/about me logos/Full stack/NextJS.png')} alt="Next.js" />
                 <span>Next.js</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/react.svg" alt="React" />
+                <img src={getImage('/src/assets/about me logos/Full stack/react.svg')} alt="React" />
                 <span>React</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Full stack/Typescript.png" alt="TypeScript" />
+                <img src={getImage('/src/assets/about me logos/Full stack/Typescript.png')} alt="TypeScript" />
                 <span>TypeScript</span>
               </div>
             </div>
@@ -220,51 +222,51 @@ const AboutMe = () => {
             <h3>Data & Analytics</h3>
             <div className="skill-cards">
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/python.png" alt="Python" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/python.png')} alt="Python" />
                 <span>Python</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/R.png" alt="R" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/R.png')} alt="R" />
                 <span>R</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Pandas.png" alt="Pandas" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Pandas.png')} alt="Pandas" />
                 <span>Pandas</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Numpy.png" alt="NumPy" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Numpy.png')} alt="NumPy" />
                 <span>NumPy</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Matplotlib.png" alt="Matplotlib" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Matplotlib.png')} alt="Matplotlib" />
                 <span>Matplotlib</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Pyspark.png" alt="PySpark" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Pyspark.png')} alt="PySpark" />
                 <span>PySpark</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Tableau.png" alt="Tableau" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Tableau.png')} alt="Tableau" />
                 <span>Tableau</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/PowerBi.png" alt="Power BI" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/PowerBi.png')} alt="Power BI" />
                 <span>Power BI</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Excel.png" alt="Excel" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Excel.png')} alt="Excel" />
                 <span>Excel</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/mysql.svg" alt="MySQL" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/mysql.svg')} alt="MySQL" />
                 <span>MySQL</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/postsql.svg" alt="PostgreSQL" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/postsql.svg')} alt="PostgreSQL" />
                 <span>PostgreSQL</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/mongoDb.svg" alt="MongoDB" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/mongoDb.svg')} alt="MongoDB" />
                 <span>MongoDB</span>
               </div>
             </div>
@@ -275,55 +277,55 @@ const AboutMe = () => {
             <h3>Cloud & AWS</h3>
             <div className="skill-cards">
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/AWS.png" alt="AWS" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/AWS.png')} alt="AWS" />
                 <span>AWS</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/aws a.svg" alt="AWS" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/aws a.svg')} alt="AWS" />
                 <span>AWS</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Azure main logo.png" alt="Azure" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Azure main logo.png')} alt="Azure" />
                 <span>Azure</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/S3.png" alt="S3" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/S3.png')} alt="S3" />
                 <span>S3</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/EC2.png" alt="EC2" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/EC2.png')} alt="EC2" />
                 <span>EC2</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Lambda.png" alt="Lambda" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Lambda.png')} alt="Lambda" />
                 <span>Lambda</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/RDS.png" alt="RDS" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/RDS.png')} alt="RDS" />
                 <span>RDS</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/DynamoDB.png" alt="DynamoDB" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/DynamoDB.png')} alt="DynamoDB" />
                 <span>DynamoDB</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Redshift.png" alt="Redshift" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Redshift.png')} alt="Redshift" />
                 <span>Redshift</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Blob.png" alt="Blob Storage" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Blob.png')} alt="Blob Storage" />
                 <span>Blob Storage</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Databricks.svg" alt="Databricks" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Databricks.svg')} alt="Databricks" />
                 <span>Databricks</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Elastic Kubernetes Service.png" alt="EKS" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Elastic Kubernetes Service.png')} alt="EKS" />
                 <span>EKS</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Data Tech stack/Hadoop.png" alt="Hadoop" />
+                <img src={getImage('/src/assets/about me logos/Data Tech stack/Hadoop.png')} alt="Hadoop" />
                 <span>Hadoop</span>
               </div>
             </div>
@@ -334,19 +336,19 @@ const AboutMe = () => {
             <h3>Development Tools</h3>
             <div className="skill-cards">
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Tools/Git.png" alt="Git" />
+                <img src={getImage('/src/assets/about me logos/Tools/Git.png')} alt="Git" />
                 <span>Git</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Tools/Git hub.png" alt="GitHub" />
+                <img src={getImage('/src/assets/about me logos/Tools/Git hub.png')} alt="GitHub" />
                 <span>GitHub</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Tools/Vs.png" alt="VS Code" />
+                <img src={getImage('/src/assets/about me logos/Tools/Vs.png')} alt="VS Code" />
                 <span>VS Code</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Tools/jira.png" alt="Jira" />
+                <img src={getImage('/src/assets/about me logos/Tools/jira.png')} alt="Jira" />
                 <span>Jira</span>
               </div>
             </div>
@@ -357,19 +359,19 @@ const AboutMe = () => {
             <h3>UI/UX Design</h3>
             <div className="skill-cards">
               <div className="skill-card">
-                <img src="/src/assets/about me logos/UI : UX/Figma.png" alt="Figma" />
+                <img src={getImage('/src/assets/about me logos/UI : UX/Figma.png')} alt="Figma" />
                 <span>Figma</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/UI : UX/Canava.png" alt="Canva" />
+                <img src={getImage('/src/assets/about me logos/UI : UX/Canava.png')} alt="Canva" />
                 <span>Canva</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/UI : UX/Sketch.png" alt="Sketch" />
+                <img src={getImage('/src/assets/about me logos/UI : UX/Sketch.png')} alt="Sketch" />
                 <span>Sketch</span>
               </div>
               <div className="skill-card">
-                <img src="/src/assets/about me logos/Additional Tools/Photoshop.png" alt="Photoshop" />
+                <img src={getImage('/src/assets/about me logos/Additional Tools/Photoshop.png')} alt="Photoshop" />
                 <span>Photoshop</span>
               </div>
             </div>
