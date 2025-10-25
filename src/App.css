@@ -614,10 +614,19 @@
   .experience-date {
     text-align: center;
   }
+  
+  /* Reduce margins on split rows for medium screens */
+  .split-row {
+    margin: 0 3px;
+  }
+  
+  .section-block {
+    padding: 4rem 3px;
+  }
 }
 
 .section-block {
-  padding: 4rem 3px;
+  padding: 4rem 4px;
   border-top: 1px solid #173966;
 }
 
@@ -632,7 +641,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 2rem;
   align-items: stretch;
-  margin: 0 3px;
+  margin: 0 4px;
 }
 
 .split-row.reverse {
@@ -1332,11 +1341,16 @@
   
   /* Section Blocks */
   .section-block {
-    padding: 1rem 0.75rem;
+    padding: 1rem 3px;
   }
   
   .section-block h2 {
     font-size: 1.5rem;
+  }
+  
+  /* Reduce margins on split rows for mobile */
+  .split-row {
+    margin: 0 3px;
   }
   
   /* Panels */
