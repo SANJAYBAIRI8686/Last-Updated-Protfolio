@@ -178,9 +178,6 @@ function App() {
     <div className="App">
       {/* Navigation Bar */}
       <nav className="navbar">
-        <div className="nav-brand">
-          <h2>SANJAY KUMAR BAIRI</h2>
-        </div>
         <div className="nav-links">
           <button 
             className={`nav-link ${currentPage === 'Home' ? 'active' : ''}`}

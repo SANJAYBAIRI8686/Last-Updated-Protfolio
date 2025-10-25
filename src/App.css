@@ -1,7 +1,7 @@
 /* Navigation Bar Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #1a1a1a; /* black gray */
@@ -9,13 +9,6 @@
   position: sticky;
   top: 0;
   z-index: 100;
-}
-
-.nav-brand h2 {
-  color: #e6f0ff;
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
 }
 
 .nav-links {
@@ -639,6 +632,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 2rem;
   align-items: stretch;
+  margin: 0 3px;
 }
 
 .split-row.reverse {
@@ -904,20 +898,22 @@
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-top: 0;
   padding-top: 2rem;
 }
 
 .footer-left {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
 }
 
 .footer-right {
   display: flex;
   align-items: center;
+  margin-top: -10px;
 }
 
 .footer-social-buttons {
