@@ -115,6 +115,12 @@ const AboutMe = () => {
               </div>
               <h4>Auburn University at Montgomery</h4>
               <p>Master's degree with focus on Information Technology, Data analytics, data structures, algorithms, and database management.</p>
+              {/* AUM Image directly below its text */}
+              <div className="college-image-card">
+                <a href="https://www.aum.edu/" target="_blank" rel="noopener noreferrer" className="college-link">
+                  <img src={aumLogo} alt="Auburn University at Montgomery" className="college-logo" />
+                </a>
+              </div>
             </div>
             <div className="education-item">
               <div className="education-header">
@@ -123,20 +129,12 @@ const AboutMe = () => {
               </div>
               <h4>Vaagdevi Engineering College</h4>
               <p>Bachelor's degree with foundations in computer science, software engineering, data structures, algorithms, database management, and system design. Specialized coursework in web development, mobile applications, and emerging technologies.</p>
-            </div>
-          </div>
-          
-          {/* College Images */}
-          <div className="college-images">
-            <div className="college-image-card">
-              <a href="https://www.aum.edu/" target="_blank" rel="noopener noreferrer" className="college-link">
-                <img src={aumLogo} alt="Auburn University at Montgomery" className="college-logo" />
-              </a>
-            </div>
-            <div className="college-image-card">
-              <a href="https://www.vaagdevi.edu.in/" target="_blank" rel="noopener noreferrer" className="college-link">
-                <img src={vaagLogo} alt="Vaagdevi Engineering College" className="college-logo" />
-              </a>
+              {/* Vaag Image directly below its text */}
+              <div className="college-image-card">
+                <a href="https://www.vaagdevi.edu.in/" target="_blank" rel="noopener noreferrer" className="college-link">
+                  <img src={vaagLogo} alt="Vaagdevi Engineering College" className="college-logo" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
