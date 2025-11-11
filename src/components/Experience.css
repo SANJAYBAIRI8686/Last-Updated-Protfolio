@@ -133,6 +133,35 @@
   padding: 1rem;
 }
 
+/* PDF Certification Cards */
+.pdf-certification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pdf-certification:hover {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}
+
+.pdf-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.pdf-label {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
 .certification-content {
   padding: 1.5rem;
 }
@@ -184,6 +213,19 @@
     height: 250px;
   }
   
+  .pdf-certification {
+    height: 250px;
+  }
+  
+  .pdf-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .pdf-label {
+    font-size: 0.9rem;
+  }
+  
   .certification-content {
     padding: 1rem;
   }
@@ -196,6 +238,23 @@
   
   .certification-card {
     margin-bottom: 1rem;
+  }
+  
+  .certification-image {
+    height: 200px;
+  }
+  
+  .pdf-certification {
+    height: 200px;
+  }
+  
+  .pdf-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pdf-label {
+    font-size: 0.85rem;
   }
 }
 

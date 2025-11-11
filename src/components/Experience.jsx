@@ -19,18 +19,39 @@ import kaggle from '../assets/Certifications/kaggle.png';
 import researchPaper from '../assets/Certifications/researchpaper.png';
 import tata from '../assets/Certifications/TATA.png';
 
+// Import AWS certification PDFs
+import awsCloudPractitioner from '../assets/Certifications/AWS Cloud Practisinoter.pdf';
+import awsAi from '../assets/Certifications/aws ai.pdf';
+import awsDataEngineer from '../assets/Certifications/aws Data engineer.pdf';
+import awsPrompt from '../assets/Certifications/aws propmt.pdf';
+import awsGeneral from '../assets/Certifications/aws.pdf';
+
+// Import AWS certification images
+import awsCloudPractitionerImg from '../assets/Certifications/Cloud Practinoir.png';
+import awsAiImg from '../assets/Certifications/Genai.png';
+import awsDataEngineerImg from '../assets/Certifications/Data Engineer.png';
+import awsPromptImg from '../assets/Certifications/Prompt engineering.png';
+import awsGeneralImg from '../assets/Certifications/gen art of possible.png';
+
 const Experience = () => {
   const [lightboxSrc, setLightboxSrc] = useState('');
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isPdf, setIsPdf] = useState(false);
 
-  const openLightbox = useCallback((src) => {
+  const openLightbox = useCallback((src, isPdfFile = false) => {
     setLightboxSrc(src);
+    setIsPdf(isPdfFile);
     setIsLightboxOpen(true);
   }, []);
 
   const closeLightbox = useCallback(() => {
     setIsLightboxOpen(false);
     setLightboxSrc('');
+    setIsPdf(false);
+  }, []);
+
+  const openPdf = useCallback((pdfSrc) => {
+    window.open(pdfSrc, '_blank');
   }, []);
 
   return (
@@ -128,6 +149,76 @@ const Experience = () => {
       <section className="certifications-section">
         <h2>Certifications</h2>
         <div className="certifications-grid">
+          {/* AWS Cloud Practitioner Certification */}
+          <div className="certification-card">
+            <img 
+              src={awsCloudPractitionerImg} 
+              alt="AWS Cloud Practitioner" 
+              className="certification-image clickable" 
+              onClick={() => openPdf(awsCloudPractitioner)}
+            />
+            <div className="certification-content">
+              <h3>AWS Cloud Practitioner</h3>
+              <p>Earned AWS Cloud Practitioner certification demonstrating foundational knowledge of AWS Cloud services, architecture, security, and pricing models.<br></br>
+                <b>Skills Demonstrated</b>: Cloud computing fundamentals, AWS services understanding, cloud architecture principles, and AWS security best practices.</p>
+            </div>
+          </div>
+          {/* AWS AI Certification */}
+          <div className="certification-card">
+            <img 
+              src={awsAiImg} 
+              alt="AWS AI Services" 
+              className="certification-image clickable" 
+              onClick={() => openPdf(awsAi)}
+            />
+            <div className="certification-content">
+              <h3>AWS AI Services</h3>
+              <p>Certification demonstrating expertise in AWS Artificial Intelligence and Machine Learning services, including Amazon SageMaker, Rekognition, and other AI/ML solutions.<br></br>
+                <b>Skills Demonstrated</b>: AWS AI/ML services, machine learning on AWS, computer vision, natural language processing, and building intelligent applications.</p>
+            </div>
+          </div>
+          {/* AWS Data Engineer Certification */}
+          <div className="certification-card">
+            <img 
+              src={awsDataEngineerImg} 
+              alt="AWS Data Engineering" 
+              className="certification-image clickable" 
+              onClick={() => openPdf(awsDataEngineer)}
+            />
+            <div className="certification-content">
+              <h3>AWS Data Engineering</h3>
+              <p>Certification showcasing proficiency in building and maintaining data pipelines on AWS, including data ingestion, transformation, storage, and analytics services.<br></br>
+                <b>Skills Demonstrated</b>: Data pipeline design, AWS data services (S3, Glue, Redshift, EMR), ETL processes, data warehousing, and big data analytics on AWS.</p>
+            </div>
+          </div>
+          {/* AWS Prompt Engineering Certification */}
+          <div className="certification-card">
+            <img 
+              src={awsPromptImg} 
+              alt="AWS Prompt Engineering" 
+              className="certification-image clickable" 
+              onClick={() => openPdf(awsPrompt)}
+            />
+            <div className="certification-content">
+              <h3>AWS Prompt Engineering</h3>
+              <p>Certification demonstrating expertise in prompt engineering techniques for AWS AI services, focusing on optimizing interactions with large language models and generative AI.<br></br>
+                <b>Skills Demonstrated</b>: Prompt engineering best practices, AWS Bedrock, optimizing AI model interactions, and building effective AI-powered applications.</p>
+            </div>
+          </div>
+          {/* AWS General Certification */}
+          <div className="certification-card">
+            <img 
+              src={awsGeneralImg} 
+              alt="AWS Certification" 
+              className="certification-image clickable" 
+              onClick={() => openPdf(awsGeneral)}
+            />
+            <div className="certification-content">
+              <h3>AWS Certification</h3>
+              <p>Additional AWS certification demonstrating continued commitment to cloud computing expertise and AWS platform mastery.<br></br>
+                <b>Skills Demonstrated</b>: Advanced AWS services knowledge, cloud architecture design, and comprehensive understanding of AWS ecosystem.</p>
+            </div>
+          </div>
           <div className="certification-card">
             <img 
               src={awsCloudComputing} 

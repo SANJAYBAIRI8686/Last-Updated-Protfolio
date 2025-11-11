@@ -1,0 +1,141 @@
+/* Footer Styles */
+.site-footer {
+  margin-top: 50px;
+  padding: 40px;
+  min-height: 300px;
+  background-color: #000000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  min-height: 100px;
+}
+
+/* Left Side */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-email,
+.footer-resume {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+.footer-email:hover,
+.footer-resume:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Right Side */
+.footer-right {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  margin-left: 600px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #e9ecef;
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-links img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.1);
+}
+
+.social-links a:focus {
+  outline: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    min-height: 150px;
+  }
+
+  .footer-left {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .footer-right {
+    position: static;
+    margin-left: 0;
+  }
+
+  .footer-left {
+    gap: 8px;
+  }
+
+  .footer-email,
+  .footer-resume {
+    font-size: 14px;
+  }
+
+  .social-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .social-links a {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-links a:hover {
+    transform: translateY(-10px) scale(1.05);
+  }
+
+  .social-links img {
+    width: 30px;
+    height: 30px;
+  }
+}

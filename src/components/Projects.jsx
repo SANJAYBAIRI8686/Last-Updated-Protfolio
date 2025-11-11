@@ -18,21 +18,22 @@ import discordImage from '../assets/Ai Agents/Agent Discord.png';
 // Import data analysis images
 import booksAnalysisImage from '../assets/Data analysis /Books.svg';
 import cricketAnalysisImage from '../assets/Data analysis /cricket.svg';
-import airQualityImage from '../assets/Data analysis /air-quality-index.png';
+import airQualityImage from '../assets/Data analysis /air-quality-index.jpg';
 import netflixImage from '../assets/Data analysis /Netflix-Subscribers.png';
-import walmartImage from '../assets/Data analysis /walmart.png';
-import weatherImage from '../assets/Data analysis /Weather.png';
+import walmartImage from '../assets/Data analysis /walmart.jpg';
+import weatherImage from '../assets/Data analysis /Weather.jpg';
 
 // Import pipeline images
 import airflowImage from '../assets/Pipeline/Airflow.svg';
 import snowflakeImage from '../assets/Pipeline/snowflake.svg';
 import awsApiImage from '../assets/Pipeline/awsapi.svg';
 
+
 const Projects = () => {
 	// Load dashboard PNG images using valid literal glob patterns (match capitalized 'Dashboards')
 	const dashboardImages = useMemo(() => {
-		const gA = import.meta.glob('/src/assets/Dashboards/*.png', { eager: true, as: 'url' });
-		const gB = import.meta.glob('/src/assets/Dashboards/**/*.png', { eager: true, as: 'url' });
+		const gA = import.meta.glob('/src/assets/Dashboards/*.png', { eager: true, query: '?url', import: 'default' });
+		const gB = import.meta.glob('/src/assets/Dashboards/**/*.png', { eager: true, query: '?url', import: 'default' });
 
 		const urls = [
 			...Object.values(gA),
@@ -45,8 +46,8 @@ const Projects = () => {
 
   // Load Full Stack images with custom ordering
   const fullstackImages = useMemo(() => {
-    const gA = import.meta.glob('/src/assets/Fullstack/*.png', { eager: true, as: 'url' });
-    const gB = import.meta.glob('/src/assets/Fullstack/**/*.png', { eager: true, as: 'url' });
+    const gA = import.meta.glob('/src/assets/Fullstack/*.png', { eager: true, query: '?url', import: 'default' });
+    const gB = import.meta.glob('/src/assets/Fullstack/**/*.png', { eager: true, query: '?url', import: 'default' });
     const urls = [
       ...Object.values(gA),
       ...Object.values(gB),
@@ -171,6 +172,7 @@ const Projects = () => {
 					<div />
 					<div />
 				</div>
+				
 				<div className="projects-hero-content">
 					<div className="projects-hero-text">
 						<h1 className="projects-hero-title">Chaos to Clarity: Engineering the Data Pipeline</h1>
@@ -235,7 +237,7 @@ const Projects = () => {
 				<div className="data-analysis-grid">
 					{/* Books Analysis Card */}
 					<div className="data-analysis-card">
-						<img src={booksAnalysisImage} alt="Books Analysis" className="data-analysis-image" />
+						<img src={booksAnalysisImage} alt="Books Analysis" className="data-analysis-image books-image" />
 						<div className="data-analysis-content">
 							<h3>Books Scrape Data Processing (Azure-Focused)</h3>
 							<div className="weather-analysis-content">
@@ -251,7 +253,7 @@ const Projects = () => {
 
 					{/* Cricket Analysis Card */}
 					<div className="data-analysis-card">
-						<img src={cricketAnalysisImage} alt="Cricket Analysis" className="data-analysis-image" />
+						<img src={cricketAnalysisImage} alt="Cricket Analysis" className="data-analysis-image cricket-image" />
 						<div className="data-analysis-content">
 							<h3>IPL Data Processing (AWS-Focused)</h3>
 							<div className="weather-analysis-content">
@@ -340,7 +342,7 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="data-analysis-card">
-						<img src={netflixImage} alt="Netflix Subscribers Analysis" className="data-analysis-image" />
+						<img src={netflixImage} alt="Netflix Subscribers Analysis" className="data-analysis-image netflix-image" />
 						<div className="data-analysis-content">
 							<h3>Netflix Subscribers Analysis</h3>
 							<div className="weather-analysis-content">
@@ -385,7 +387,7 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="data-analysis-card">
-						<img src={walmartImage} alt="Walmart Sales Analysis" className="data-analysis-image" />
+						<img src={walmartImage} alt="Walmart Sales Analysis" className="data-analysis-image walmart-image" />
 						<div className="data-analysis-content">
 							<h3>Walmart Sales Analysis</h3>
 							<div className="weather-analysis-content">
@@ -416,7 +418,7 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="data-analysis-card">
-						<img src={weatherImage} alt="Weather Data Analysis" className="data-analysis-image" />
+						<img src={weatherImage} alt="Weather Data Analysis" className="data-analysis-image weather-image" />
 						<div className="data-analysis-content">
 							<h3>Weather Dataset Analysis</h3>
 							<div className="weather-analysis-content">
@@ -473,7 +475,7 @@ const Projects = () => {
 				<h2>Data Pipeline Projects</h2>
 				<div className="pipeline-projects-grid">
 					<div className="pipeline-project-card">
-						<img src={airflowImage} alt="Apache Airflow Pipeline" className="pipeline-project-image" />
+						<img src={airflowImage} alt="Apache Airflow Pipeline" className="pipeline-project-image airflow-image" />
 						<div className="pipeline-project-content">
 							<h3>Automated Weather Notification System</h3>
 							<div className="weather-analysis-content">
@@ -501,7 +503,7 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="pipeline-project-card">
-						<img src={snowflakeImage} alt="Snowflake Data Warehouse" className="pipeline-project-image" />
+						<img src={snowflakeImage} alt="Snowflake Data Warehouse" className="pipeline-project-image snowflake-image" />
 						<div className="pipeline-project-content">
 							<h3>Data Warehouse with Automation (Snowflake/dbt)</h3>
 							<div className="weather-analysis-content">
@@ -537,7 +539,7 @@ const Projects = () => {
 			</section>
 
 			{/* Dashboards */}
-			<section className="project-showcase-section">
+			<section id="dashboards-section" className="project-showcase-section">
 				<h2>Dashboards</h2>
 				<div className="dashboard-rows">
 					{chunkIntoRows(dashboardImages.length > 0 ? dashboardImages : Array.from({ length: 9 }).map(() => ''), 2).map((row, rIdx) => (

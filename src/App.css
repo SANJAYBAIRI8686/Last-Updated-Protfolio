@@ -1,10 +1,19 @@
+/* Global Font Family */
+* {
+  font-family: 'Calibri', sans-serif;
+}
+
+body {
+  font-family: 'Calibri', sans-serif;
+}
+
 /* Navigation Bar Styles */
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1a1a1a; /* black gray */
+  background-color: #202123; /* requested navbar color */
   border-bottom: 1px solid #404040;
   position: sticky;
   top: 0;
@@ -59,7 +68,7 @@
 
 .hero-section {
   min-height: calc(100vh - 280px) !important;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  background-color: #343541; /* hero background requested */
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -83,24 +92,27 @@
 
 .hero-text h1 {
   font-size: 3.5rem;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 1rem;
   font-weight: 700;
   line-height: 1.2;
+  font-family: 'Calibri', sans-serif;
 }
 
 .hero-text h2 {
   font-size: 1.5rem;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  font-family: 'Calibri', sans-serif;
 }
 
 .hero-text p {
   font-size: 1.1rem;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 2rem;
   line-height: 1.6;
+  font-family: 'Calibri', sans-serif;
 }
 
 .hero-text .highlight {
@@ -176,6 +188,15 @@
   color: #2563eb;
 }
 
+/* New avatar gif styling */
+.avatar-gif {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 /* Project GIF Styles */
 .project-gif {
   width: 100%;
@@ -212,13 +233,15 @@
     font-size: 0.85rem;
   }
   
-  /* Hide avatar on medium screens too */
+  /* Make avatar responsive on medium screens */
   .avatar-container {
-    display: none;
+    width: 200px;
+    height: 200px;
   }
   
-  .avatar-placeholder {
-    display: none;
+  .avatar-gif {
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -275,6 +298,7 @@
   font-size: 3.5rem;
   margin-bottom: 1rem;
   line-height: 1.2;
+  font-family: 'Calibri', sans-serif;
 }
 
 .highlight {
@@ -286,6 +310,7 @@
   color: #c7d7ff;
   margin-bottom: 1.5rem;
   font-weight: 400;
+  font-family: 'Calibri', sans-serif;
 }
 
 .hero-text p {
@@ -293,6 +318,7 @@
   line-height: 1.6;
   margin-bottom: 2rem;
   color: #a9c2ff;
+  font-family: 'Calibri', sans-serif;
 }
 
 .hero-buttons {
@@ -597,13 +623,15 @@
     font-size: 0.85rem;
   }
   
-  /* Hide avatar */
+  /* Make avatar responsive */
   .avatar-container {
-    display: none;
+    width: 150px;
+    height: 150px;
   }
   
-  .avatar-placeholder {
-    display: none;
+  .avatar-gif {
+    width: 130px;
+    height: 130px;
   }
   
   .experience-item {
@@ -677,6 +705,7 @@
   font-style: normal; /* ensure not italic */
   max-width: 800px;
   text-align: justify;
+  line-height: 1.8;
 }
 
 @media (max-width: 900px) {
@@ -819,7 +848,7 @@
 
 /* === Light Theme Overrides (White-dominated with blue accents) === */
 .navbar {
-  background-color: #1a1a1a;
+  background-color: #202123;
   border-bottom: 1px solid #404040;
 }
 .nav-brand h2 { color: #e6f0ff; }
@@ -839,10 +868,12 @@
   border: 1px solid #e5eaf3;
 }
 
-/* Hero */
 .highlight { color: #2d6cdf; }
-.hero-text h2 { color: #475569; }
-.hero-text p { color: #475569; }
+/* Ensure hero subheading and paragraph are white for good contrast on the dark hero background */
+.hero-section .hero-text h2,
+.hero-section .hero-text p {
+  color: #ffffff;
+}
 .avatar-placeholder {
   background: linear-gradient(135deg, #e6f2ff, #cfe3ff);
   color: #0b1f3a;
@@ -1281,7 +1312,7 @@
   
   .section-intro {
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.7;
   }
 }
 
@@ -1330,13 +1361,15 @@
     line-height: 1.4;
   }
   
-  /* Hide avatar on small screens */
+  /* Make avatar responsive on small screens */
   .avatar-container {
-    display: none;
+    width: 120px;
+    height: 120px;
   }
   
-  .avatar-placeholder {
-    display: none;
+  .avatar-gif {
+    width: 100px;
+    height: 100px;
   }
   
   /* Section Blocks */
@@ -1360,7 +1393,7 @@
   
   .section-intro {
     font-size: 0.8rem;
-    line-height: 1.5;
+    line-height: 1.7;
   }
   
   /* Data Journey Cards */
@@ -1520,7 +1553,7 @@
   
   .section-intro {
     font-size: 0.7rem;
-    line-height: 1.4;
+    line-height: 1.6;
   }
   
   /* Cards */

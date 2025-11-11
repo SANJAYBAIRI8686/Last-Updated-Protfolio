@@ -9,16 +9,13 @@
 .about-hero {
   margin: 0;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background: #f8f9fb;
   border-radius: 0;
-  min-height: 60vh;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  z-index: 10;
 }
 
 .about-hero-content {
@@ -39,8 +36,8 @@
 
 .about-text h1 {
   font-size: 3rem;
-  color: #ffffff;
-  margin-bottom: 0;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
@@ -324,11 +321,25 @@
 
 /* Education Section */
 .education-section {
-  margin-top: 60vh;
+  position: relative;
+  z-index: 20;
+  margin-top: 40px;
   margin-bottom: 4rem;
   padding: 3rem;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .education-section {
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .education-section {
+    margin-top: 80px;
+  }
 }
 
 .education-section h2 {
@@ -365,14 +376,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 2rem 0;
   background: transparent;
   border: none;
   box-shadow: none;
   transition: all 0.3s ease;
-  height: 300px;
-  width: 350px;
-  margin-top: -40px;
+  height: 250px;
+  width: 100%;
+  max-width: 350px;
+  margin-top: 2rem;
+}
+
+.college-image-card::before {
+  content: '';
+  margin-top: 2rem;
 }
 
 .college-image-card:hover {
@@ -421,8 +438,11 @@
   background: #ffffff;
   padding: 2rem;
   border-radius: 12px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .education-header {
@@ -727,6 +747,7 @@
   }
 }
 
+
 @media (max-width: 480px) {
   .about-text h1 {
     font-size: 2rem;
@@ -758,62 +779,78 @@
 
 /* Social Media Section */
 .social-media-section {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   width: 100%;
-}
-
-.social-media-section h3 {
-  color: #2563eb;
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .social-media-grid {
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .social-media-link {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  width: 56px;
+  height: 56px;
   background: transparent;
-  border-radius: 50%;
+  border-radius: 9999px;
   text-decoration: none;
-  color: #ffffff;
-  transition: all 0.3s ease;
-  border: 2px solid #2563eb;
-  box-shadow: none;
-  width: 100px;
-  height: 100px;
+  transition: all 0.2s ease;
 }
 
 .social-media-link:hover {
-  background: #2563eb;
-  color: #ffffff;
-  transform: translateY(-3px);
-  border-color: #2563eb;
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  background: rgba(229, 231, 235, 0.5);
+  transform: translateY(-2px);
 }
 
 .social-media-icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .social-media-link {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .social-media-icon {
+    width: 42px;
+    height: 42px;
+  }
 }
 
 .social-media-link span {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #ffffff;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .about-hero-content {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .about-text {
+    text-align: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .about-avatar {
+    margin-top: 2rem;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 768px) {

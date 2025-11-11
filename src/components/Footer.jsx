@@ -1,10 +1,12 @@
 import React from 'react';
+import './Footer.css';
 
 // Import social media icons
 import linkedinIcon from '../assets/Social Media/linkedin.png';
 import githubIcon from '../assets/Social Media/github.png';
 import twitterIcon from '../assets/Social Media/twitter.png';
 import redditIcon from '../assets/Social Media/reddit.png';
+import resumePdf from '../assets/SANJAY BSK.pdf';
 
 const IconLink = ({ href, label, children }) => (
   <a href={href} target="_blank" rel="noreferrer" aria-label={label} className="footer-icon lg">
@@ -32,32 +34,31 @@ const InstagramIcon = (props) => (
 
 const Footer = () => {
   return (
-    <footer className="site-footer big">
-      <div className="footer-inner">
-        {/* Top section - Contact Information and Social Media */}
-        <div className="footer-top">
-          {/* Left side - Contact Information */}
-          <div className="footer-left">
-            <a href="mailto:bairisanjaykumar1298@gmail.com" className="footer-email">bairisanjaykumar1298@gmail.com</a>
-            <a href="#" className="footer-resume">Resume</a>
-          </div>
-          
-          {/* Right side - Social Media Icons */}
-          <div className="footer-right">
-            <div className="footer-social-buttons">
-              <a href="https://www.linkedin.com/in/bairisanjay70754/" target="_blank" rel="noopener noreferrer" className="footer-social-link">
-                <img src={linkedinIcon} alt="LinkedIn" className="footer-social-icon" />
-              </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="footer-social-link">
-                <img src={githubIcon} alt="GitHub" className="footer-social-icon" />
-              </a>
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="footer-social-link">
-                <img src={twitterIcon} alt="Twitter" className="footer-social-icon" />
-              </a>
-              <a href="https://reddit.com/" target="_blank" rel="noopener noreferrer" className="footer-social-link">
-                <img src={redditIcon} alt="Reddit" className="footer-social-icon" />
-              </a>
-            </div>
+    <footer className="site-footer">
+      <div className="footer-container">
+        <div className="footer-left">
+          <a href="mailto:bairisanjaykumar1298@gmail.com" className="footer-email">
+            bairisanjaykumar1298@gmail.com
+          </a>
+          <a href={resumePdf} className="footer-resume" target="_blank" rel="noopener noreferrer">
+            Resume
+          </a>
+        </div>
+        
+        <div className="footer-right">
+          <div className="social-links">
+            <a href="https://www.linkedin.com/in/bairisanjay70754/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinIcon} alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <img src={githubIcon} alt="GitHub" />
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+              <img src={twitterIcon} alt="Twitter" />
+            </a>
+            <a href="https://reddit.com/" target="_blank" rel="noopener noreferrer">
+              <img src={redditIcon} alt="Reddit" />
+            </a>
           </div>
         </div>
       </div>

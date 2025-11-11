@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import daGif from './assets/Gifs/DA gif.gif';
 import fsGif from './assets/Gifs/FS gif.gif';
 import cloudGif from './assets/Gifs/Cloud Gif.gif';
+import hiGif from './assets/Gifs/hi.gif';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -56,9 +57,7 @@ function App() {
                 </div>
                 <div className="hero-avatar">
                   <div className="avatar-container">
-                    <div className="avatar-placeholder">
-                      <span>SK</span>
-                    </div>
+                    <img src={hiGif} alt="Hi animation" className="avatar-gif" />
                   </div>
                 </div>
               </div>

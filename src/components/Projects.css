@@ -2,6 +2,79 @@
   max-width: none;
   margin: 0 50px;
   padding: 0 0 4rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.projects-page * {
+  box-sizing: border-box;
+}
+
+/* Global text wrapping for all content */
+.projects-page p,
+.projects-page h1,
+.projects-page h2,
+.projects-page h3,
+.projects-page h4,
+.projects-page h5,
+.projects-page h6 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .projects-page {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .projects-page > section {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ensure all headings wrap properly on mobile */
+  .projects-page h1,
+  .projects-page h2,
+  .projects-page h3,
+  .projects-page h4,
+  .projects-page h5,
+  .projects-page h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+  
+  /* Ensure text content areas respect viewport width */
+  .projects-page .project-content,
+  .projects-page .card-content,
+  .projects-page .section-card,
+  .projects-page p,
+  .projects-page .dashboard-content,
+  .projects-page .data-analysis-content,
+  .projects-page .pipeline-project-content,
+  .projects-page .cloud-project-content,
+  .projects-page .ai-agent-text {
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /* Hero with 3 column lines */
@@ -20,7 +93,7 @@
 /* Projects Hero Section */
 .projects-hero-section {
   position: relative;
-  min-height: calc(100vh - 200px);
+  min-height: calc(100vh - 400px);
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -30,10 +103,10 @@
   border-radius: 0;
   overflow: hidden;
   padding: 2rem 3rem 3rem 3rem;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
+  max-width: 100%;
 }
+
 
 .projects-hero-content {
   display: grid;
@@ -64,6 +137,9 @@
   line-height: 1.6;
   font-size: 1.1rem;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .projects-hero-gif {
@@ -84,6 +160,72 @@
 
 .projects-demo-gif:hover {
   transform: scale(1.02);
+}
+
+/* Mobile responsiveness for hero section */
+@media (max-width: 768px) {
+  .projects-hero-section {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .projects-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .projects-hero-text {
+    gap: 1rem;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .projects-hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+
+  .projects-hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+
+  .projects-hero-gif {
+    padding: 0.5rem;
+    order: -1; /* Moves GIF above text on mobile */
+  }
+
+  .projects-demo-gif {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+/* Additional mobile responsiveness for very small screens */
+@media (max-width: 480px) {
+  /* Reduce button margins on very small screens */
+  .read-more-btn {
+    margin: 1rem 0 50px 0;
+  }
 }
 
 /* Project Navigation Section */
@@ -110,7 +252,7 @@
   flex-wrap: nowrap;
   gap: 1.5rem;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 100px auto;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 1rem 0.5rem 1.5rem 0.5rem;
@@ -157,6 +299,111 @@
   white-space: nowrap;
   flex-shrink: 0;
   min-width: max-content;
+}
+
+/* Enhanced visual styling for project nav buttons (scoped) */
+.project-navigation-section .project-nav-btn {
+  color: #0b1f3a;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(245,247,250,0.85) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.08);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+}
+
+.project-navigation-section .project-nav-btn::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -30%;
+  width: 60%;
+  height: 220%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.6), rgba(255,255,255,0.05));
+  transform: rotate(-25deg);
+  opacity: 0.6;
+  transition: all 0.45s ease;
+  pointer-events: none;
+}
+
+.project-navigation-section .project-nav-btn:hover::before {
+  top: -40%;
+}
+
+.project-navigation-section .project-nav-btn:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 60px rgba(2,6,23,0.12);
+  color: #073b66;
+}
+
+.project-navigation-section .project-nav-btn:focus {
+  outline: 3px solid rgba(37,99,235,0.14);
+  outline-offset: 2px;
+}
+
+/* Responsive grid layout for nav buttons */
+@media (max-width: 480px) {
+  .project-nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    padding: 0.75rem;
+    align-items: stretch;
+  }
+
+  .project-navigation-section .project-nav-btn {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.85rem;
+    border-radius: 10px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .project-nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .project-navigation-section .project-nav-btn {
+    padding: 0.75rem 0.6rem;
+    font-size: 0.92rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 1rem 1rem;
+  }
+
+  .project-navigation-section .project-nav-btn {
+    padding: 0.85rem 0.9rem;
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* desktop: revert to original flex layout but keep new visuals */
+  .project-nav-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem 1.5rem 0.5rem;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .project-navigation-section .project-nav-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    min-width: max-content;
+  }
 }
 
 .project-nav-btn::before {
@@ -230,6 +477,7 @@
   .project-nav-buttons {
     gap: 1rem;
     padding: 0.5rem 0.25rem 1rem 0.25rem;
+    margin: 0 auto 50px auto;
   }
   
   .project-nav-title {
@@ -284,12 +532,35 @@
   border: 1px solid #e5eaf3;
   border-radius: 12px;
   min-height: 280px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
-.section-text p { color: #475569; }
+.section-text p { 
+  color: #475569; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
 
 @media (max-width: 900px) {
   .projects-section-body,
-  .projects-section-body.reverse { grid-template-columns: 1fr; }
+  .projects-section-body.reverse { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .section-card {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .section-text p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
 }
 
 .subcards-grid {
@@ -399,6 +670,95 @@
   }
 }
 
+/* Dashboards Section with Background Color */
+#dashboards-section {
+  background: #2E4161;
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 0 0 2rem 0;
+}
+
+/* Ensure the section heading inside the colored parent has readable contrast */
+#dashboards-section h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Keep the inner grid transparent so children look like cards inside the parent */
+#dashboards-section .dashboard-rows {
+  background: transparent;
+  padding: 0.5rem 0; /* slight vertical breathing room inside parent */
+}
+
+/* Mobile responsiveness for Dashboards section */
+@media (max-width: 768px) {
+  #dashboards-section {
+    background: #2E4161;
+    padding: 1rem;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  #dashboards-section h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  #dashboards-section .dashboard-rows {
+    padding: 0;
+  }
+  
+  .dashboard-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .dashboard-card {
+    height: 300px;
+  }
+  
+  .dashboard-content {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .dashboard-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Additional mobile responsiveness for very small screens */
+@media (max-width: 480px) {
+  #dashboards-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-card {
+    height: 250px;
+  }
+  
+  .dashboard-content {
+    padding: 0.5rem;
+  }
+  
+  .dashboard-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
 /* Dashboards - two items per row layout */
 .dashboard-rows {
   display: flex;
@@ -459,6 +819,10 @@
   line-height: 1.5rem;
   white-space: pre-wrap;
   text-align: justify;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .dashboard-item {
@@ -470,38 +834,53 @@
 @media (max-width: 900px) {
   .dashboard-row { grid-template-columns: 1fr; }
   .dashboard-card { height: 360px; }
+  
+  .dashboard-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 /* Fullstack gallery - two items per row layout */
 .fullstack-rows {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: none;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border-radius: 16px;
   margin-bottom: 2rem;
 }
+
 .fullstack-row {
   display: grid;
+  gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
+
 .fullstack-item {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-}
-.fullstack-card {
+  gap: 1rem;
   width: 100%;
-  height: 420px;
+}
+
+.fullstack-card {
   background: #ffffff;
   border: 1px solid #e5eaf3;
   border-radius: 12px;
   overflow: hidden;
+  height: 420px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.fullstack-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 .fullstack-card img,
 .fullstack-placeholder {
   width: 100%;
@@ -509,6 +888,7 @@
   object-fit: cover;
   display: block;
 }
+
 .fullstack-placeholder {
   display: grid;
   place-items: center;
@@ -516,10 +896,11 @@
   background: #f8fafc;
   font-size: 0.95rem;
 }
+
 .fullstack-content {
-  padding: 0.5rem 0.75rem;
+  padding: 1.25rem;
   font-size: 0.95rem;
-  line-height: 1.35rem;
+  line-height: 1.5;
   color: #475569;
   background: #ffffff;
   border: 1px solid #e5eaf3;
@@ -527,9 +908,60 @@
   text-align: justify;
 }
 
-@media (max-width: 900px) {
-  .fullstack-row { grid-template-columns: 1fr; }
-  .fullstack-card { height: 360px; }
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .fullstack-rows {
+    padding: 1.5rem;
+  }
+
+  .fullstack-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .fullstack-card {
+    height: 380px;
+  }
+
+  .fullstack-content {
+    padding: 1rem;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .fullstack-rows {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: none;
+  }
+
+  .fullstack-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .fullstack-card {
+    height: 300px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .fullstack-item {
+    gap: 0;
+    margin-bottom: 1rem;
+  }
+
+  .fullstack-content {
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 }
 
 /* Clickable dashboard images */
@@ -584,11 +1016,11 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #3f2967 0%, #9d44c9 50%, #2c1e4d 100%);
   border-radius: 12px;
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    0 10px 20px rgba(0, 0, 0, 0.05);
+    0 20px 40px rgba(63, 41, 103, 0.2),
+    0 10px 20px rgba(157, 68, 201, 0.15);
   position: relative;
   overflow: hidden;
 }
@@ -600,8 +1032,9 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  background: radial-gradient(circle at 25% 25%, rgba(157, 68, 201, 0.3) 0%, transparent 70%);
   pointer-events: none;
+  mix-blend-mode: overlay;
 }
 
 .iphone-display {
@@ -730,10 +1163,14 @@
 }
 
 .web-app-banner-section h2 {
-  font-size: 2.5rem;
-  color: #2563eb;
-  margin-bottom: 2rem;
-  font-weight: 600;
+  font-size: 3rem;
+  color: #000000;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+  text-transform: capitalize;
 }
 
 .banner-container {
@@ -783,9 +1220,14 @@
   }
   
   .banner-container {
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0;
   }
   
+  .banner-image {
+    border-radius: 0;
+  }
+
   .iphone-display::after {
     border-radius: 58px;
   }
@@ -859,16 +1301,24 @@
 }
 
 @media (max-width: 768px) {
+  .aum-banner-section {
+    padding: 2rem 0;
+    margin: 0;
+    border-radius: 0;
+  }
+
   .aum-banner-section h2 {
     font-size: 2rem;
   }
   
   .aum-banner-container {
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0;
   }
   
   .aum-content {
-    padding: 0 1rem;
+    padding: 1rem 0;
+    margin: 0;
   }
   
   .aum-banner-image {
@@ -876,6 +1326,7 @@
     max-width: 900px;
     height: auto;
     min-height: 300px;
+    border-radius: 0;
   }
 }
 
@@ -884,8 +1335,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: none;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
   background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   border-radius: 16px;
@@ -899,6 +1350,7 @@
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .data-analysis-card:hover {
@@ -910,13 +1362,76 @@
 .data-analysis-image {
   width: 100%;
   height: 350px;
-  object-fit: cover;
+  /* show entire image (especially SVGs) inside the fixed card area by fitting the image
+     while preserving aspect ratio. This prevents important parts of the SVG from being
+     cropped while keeping the card size unchanged. */
+  object-fit: contain;
+  object-position: center;
   border-bottom: 1px solid #e5e7eb;
   background: #f8fafc;
 }
 
+/* Make Walmart and Weather images fill the card completely */
+.data-analysis-image.walmart-image,
+.data-analysis-image.weather-image {
+  object-fit: cover;
+  object-position: center;
+  background: none;
+}
+
+/* Special black background for specific images */
+.data-analysis-image.books-image,
+.data-analysis-image.cricket-image,
+.data-analysis-image.netflix-image {
+  /* set to requested near-black background */
+  background: #000000;
+}
+
 .data-analysis-content {
   padding: 1.5rem;
+}
+
+/* Mobile responsiveness for data analysis cards */
+@media (max-width: 768px) {
+  .data-analysis-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    margin: 0 0 2rem 0;
+    border-radius: 0;
+  }
+
+  .data-analysis-card {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .data-analysis-image {
+    height: 250px;
+    /* ensure full SVGs fit inside the reduced mobile card height */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0;
+  }
+
+  .data-analysis-content {
+    padding: 1rem;
+    border-radius: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .data-analysis-content h3 {
+    font-size: 1.2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .data-analysis-content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
 }
 
 .data-analysis-content h3 {
@@ -924,6 +1439,9 @@
   color: #2563eb;
   margin-bottom: 1rem;
   font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .data-analysis-content p {
@@ -931,6 +1449,9 @@
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Weather Analysis Expandable Content */
@@ -946,7 +1467,7 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  margin: 1rem 0;
+  margin: 1rem 0 100px 0;
   transition: background 0.3s ease;
 }
 
@@ -977,14 +1498,28 @@
 @media (max-width: 768px) {
   .data-analysis-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    background: none;
+  }
+  
+  .data-analysis-card {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   .data-analysis-image {
     height: 300px;
-    object-fit: cover;
-    background: #f8fafc;
+    /* use contain on mobile so the full image is visible (especially for SVGs) */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0;
   }
   
   .data-analysis-content {
@@ -997,12 +1532,39 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  max-width: none;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: #ffffff;
   border-radius: 16px;
   margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile responsiveness for cloud project cards */
+@media (max-width: 768px) {
+  .cloud-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    margin: 0 0 2rem 0;
+    border-radius: 0;
+  }
+
+  .cloud-project-card {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .cloud-project-image {
+    height: 250px;
+    border-radius: 0;
+  }
+
+  .cloud-project-content {
+    padding: 1rem;
+    border-radius: 0;
+  }
 }
 
 .cloud-project-card {
@@ -1018,6 +1580,37 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   border-color: #2563eb;
+}
+
+/* Project showcase text styles */
+.project-showcase-section {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.project-showcase-section h2 {
+  color: #000000;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.project-showcase-text {
+  text-align: justify;
+  padding: 1rem 0;
+}
+
+.project-showcase-text p {
+  line-height: 1.8;
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+  letter-spacing: 0.01em;
+  text-align: justify;
+  font-size: 0.95rem;
 }
 
 .cloud-project-image {
@@ -1037,29 +1630,83 @@
   color: #2563eb;
   margin-bottom: 1rem;
   font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .cloud-project-content p {
   font-size: 0.95rem;
   color: #6b7280;
-  line-height: 1.6;
-  margin: 0;
+  line-height: 1.8;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  margin: 0 0 1rem 0;
   text-align: justify;
+  letter-spacing: 0.01em;
+}
+
+/* Ensure Cloud project description text (including raw HTML injected divs) is justified and has comfortable line spacing */
+.cloud-project-content,
+.cloud-project-content > div,
+.cloud-project-content p {
+  line-height: 1.9;
+  text-align: justify;
+  hyphens: auto;
+  widows: 2;
+  orphans: 2;
+  color: #52555f;
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.cloud-project-content > div {
+  margin-top: 0.25rem;
 }
 
 @media (max-width: 768px) {
   .cloud-projects-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    background: none;
+  }
+  
+  .cloud-project-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   .cloud-project-image {
     height: 300px;
+    border-radius: 0;
   }
   
   .cloud-project-content {
     padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .cloud-project-content h3,
+  .cloud-project-content p,
+  .cloud-project-content > div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
 }
 
@@ -1067,15 +1714,91 @@
 .pipeline-projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  max-width: none;
+  gap: 1.25rem;
+  width: 100%;
   margin: 0;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  border-radius: 16px;
-  margin-bottom: 2rem;
+  padding: 0;
+  background: transparent;
 }
 
+/* Parent card styling: make the whole Data Pipeline section appear as a light-gray
+   rounded container starting at the section heading and wrapping the child cards. */
+#data-pipeline-projects {
+  background: #2f2f2f; /* dark gray */
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 0 0 2rem 0; /* space below before next section */
+}
+
+/* Ensure the section heading inside the dark parent has readable contrast */
+#data-pipeline-projects h2 {
+  color: #ffffff;
+}
+
+/* Keep the inner grid transparent so children look like cards inside the parent */
+#data-pipeline-projects .pipeline-projects-grid {
+  background: transparent;
+  padding: 0.5rem 0; /* slight vertical breathing room inside parent */
+}
+
+/* Mobile responsiveness for Data Pipeline Projects section */
+@media (max-width: 768px) {
+  #data-pipeline-projects {
+    background: #2f2f2f;
+    padding: 1rem;
+    border-radius: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  #data-pipeline-projects h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  #data-pipeline-projects .pipeline-projects-grid {
+    padding: 0;
+  }
+}
+
+.pipeline-project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.pipeline-project-image {
+  width: 100%;
+  height: 420px;
+  object-fit: contain;
+  object-position: center;
+  background: #ffffff;
+}
+
+/* Set pure white background for Airflow and Snowflake SVGs */
+.pipeline-project-image.airflow-image,
+.pipeline-project-image.snowflake-image {
+  background: #ffffff;
+}
+
+/* Remove border from Airflow SVG */
+.pipeline-project-image.airflow-image {
+  border: none;
+  outline: none;
+}
+
+.pipeline-project-content {
+  flex: 1;
+  padding: 1.5rem;
+  background: #ffffff;
+}
+
+/* Data Pipeline Project Cards - Consolidated Styles */
 .pipeline-project-card {
   background: #ffffff;
   border: 1px solid #e5e7eb;
@@ -1083,6 +1806,9 @@
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
 }
 
 .pipeline-project-card:hover {
@@ -1095,6 +1821,7 @@
   width: 100%;
   height: 250px;
   object-fit: contain;
+  object-position: center;
   border-bottom: 1px solid #e5e7eb;
   background: #f8fafc;
   padding: 1rem;
@@ -1102,6 +1829,10 @@
 
 .pipeline-project-content {
   padding: 1.5rem;
+  background: #ffffff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .pipeline-project-content h3 {
@@ -1109,6 +1840,10 @@
   color: #2563eb;
   margin-bottom: 1rem;
   font-weight: 600;
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .pipeline-project-content p {
@@ -1116,21 +1851,77 @@
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
+/* Mobile responsiveness for pipeline project cards */
 @media (max-width: 768px) {
   .pipeline-projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 0 1rem;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .pipeline-project-card {
+    width: 100%;
+    margin: 0;
+    border-radius: 12px;
+    min-height: auto;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
   }
   
   .pipeline-project-image {
     height: 200px;
+    padding: 0.5rem;
   }
   
   .pipeline-project-content {
     padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .pipeline-project-content h3 {
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .pipeline-project-content p {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+/* Desktop styles to match dashboard layout */
+@media (min-width: 1024px) {
+  .pipeline-projects-grid {
+    padding: 0 2rem;
+  }
+
+  .pipeline-project-card {
+    background: #ffffff;
+    border: 1px solid #e5eaf3;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .pipeline-project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(37,99,235,0.06);
+  }
+
+  .pipeline-project-content {
+    padding: 2rem;
   }
 }
 
@@ -1152,12 +1943,55 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  max-width: none;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem;
   background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
   border-radius: 16px;
   margin-bottom: 2rem;
+}
+
+/* Mobile responsiveness for AI agent cards */
+@media (max-width: 768px) {
+  .ai-agent-cards-container {
+    gap: 1.5rem;
+    padding: 1rem 0;
+    margin: 0 0 2rem 0;
+    border-radius: 0;
+  }
+
+  .ai-agent-row {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .ai-agent-card {
+    width: 100%;
+    height: 250px;
+    border-radius: 0;
+  }
+
+  .ai-agent-text {
+    padding: 1rem;
+    margin: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ai-agent-text h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  
+  .ai-agent-text p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
 }
 
 .ai-agent-row {
@@ -1189,12 +2023,20 @@
   color: #2563eb;
   margin: 0 0 1rem 0;
   font-weight: 600;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
 }
 
 .ai-agent-text p {
   font-size: 1rem;
   color: #6b7280;
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
   text-align: justify;
 }
 
@@ -1216,29 +2058,60 @@
 }
 
 @media (max-width: 768px) {
+  .ai-agent-projects-section {
+    padding: 2rem 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .ai-agent-cards-container {
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    border-radius: 0;
   }
   
   .ai-agent-row {
     flex-direction: column;
-    gap: 1rem;
-    align-items: center;
+    gap: 0;
+    align-items: stretch;
+    margin-bottom: 1rem;
   }
   
   .ai-agent-card {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     height: 250px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   .ai-agent-text {
-    text-align: center;
-    padding: 0.5rem 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+    text-align: left;
+    box-sizing: border-box;
+  }
+  
+  .ai-agent-text h3,
+  .ai-agent-text p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
   
   .ai-agent-projects-section h2 {
     font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-agent-image {
+    border-radius: 0;
   }
 }
 
@@ -1429,5 +2302,54 @@
     width: 90px;
     height: 10px;
     border-radius: 5px;
+  }
+}
+
+/* --- Desktop: match Dashboard card sizing, gaps and margins --- */
+@media (min-width: 1150px) {
+  /* match Dashboard layout exactly on desktop: full-width container with two equal columns and identical gap/margins */
+  .data-analysis-grid,
+  .cloud-projects-grid,
+  .fullstack-rows {
+    /* allow the section to span the available content width similar to dashboard-rows */
+    width: 100%;
+    margin: 0; /* let parent control overall page margins */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem; /* same gap as .dashboard-row */
+    padding: 0 2rem; /* keep slight horizontal padding to align with other sections */
+    border-radius: 0; /* match dashboard which is edge aligned */
+    max-width: none;
+  }
+
+  /* hover/enlarge effect similar to dashboard cards (desktop only) */
+  .data-analysis-card,
+  .cloud-project-card,
+  .fullstack-card {
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  .data-analysis-card:hover,
+  .cloud-project-card:hover,
+  .fullstack-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    border-color: rgba(37,99,235,0.06);
+  }
+
+  /* make images match dashboard card height */
+  .data-analysis-image,
+  .cloud-project-image,
+  .fullstack-card img {
+    height: 420px;
+    /* Use contain for SVGs/graphics so the full image is visible inside the card. */
+    object-fit: contain;
+    object-position: center;
+  }
+
+  /* ensure each card retains rounded corners */
+  .data-analysis-card,
+  .cloud-project-card,
+  .fullstack-card {
+    border-radius: 12px;
   }
 }
