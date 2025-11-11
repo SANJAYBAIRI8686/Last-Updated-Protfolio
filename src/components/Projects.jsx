@@ -112,53 +112,36 @@ const Projects = () => {
 
   const getExternalLinkForFullstack = (src) => {
     try {
-      const filename = (src.split('/').pop() || '');
-      const nameLower = filename.toLowerCase();
-      
-      // Debug logging
-      console.log('Checking filename:', filename, 'lowercase:', nameLower);
-      
-      // Specific mappings per user request
-      if (filename === 'Netflix.png' || nameLower === 'netflix.png') {
-        console.log('Matched Netflix');
+      const last = (src.split('/').pop() || '');
+      const nameLower = last.toLowerCase();
+
+      // Robust matching (works with Vite hashed filenames)
+      if (nameLower.includes('netflix')) {
         return 'https://velvety-sunflower-83a500.netlify.app/';
       }
-      if (filename === 'Aitools.png' || nameLower === 'aitools.png') {
-        console.log('Matched Aitools');
+      if (nameLower.includes('aitools')) {
         return 'https://willowy-dusk-9b8224.netlify.app/';
       }
-      if (filename === 'Apple.png' || nameLower === 'apple.png') {
-        console.log('Matched Apple');
+      if (nameLower.includes('apple')) {
         return 'https://apple-clone-hazel-tau.vercel.app/';
       }
-      if (filename === 'Nature.png' || nameLower === 'nature.png') {
-        console.log('Matched Nature');
+      if (nameLower.includes('nature')) {
         return 'https://v0-nature-webapp-integration.vercel.app/sunny';
       }
-      if (filename === 'amazon.png' || nameLower === 'amazon.png') {
-        console.log('Matched Amazon');
+      if (nameLower.includes('amazon')) {
         return 'https://ui-reversal-art.lovable.app/';
       }
-      if (filename === 'weather.png' || nameLower === 'weather.png') {
-        console.log('Matched Weather');
+      if (nameLower.includes('weather')) {
         return 'https://global-forecast-nexus.lovable.app/';
       }
-      if (nameLower.includes('screenshot 2025-10-16')) {
-        console.log('Matched Screenshot');
-        return 'https://calmweave-guide-82157.lovable.app/';
-      }
-      if (nameLower.includes('mentalhealth')) {
-        console.log('Matched Mental Health');
+      if (nameLower.includes('screenshot 2025-10-16') || nameLower.includes('mentalhealth')) {
         return 'https://calmweave-guide-82157.lovable.app/';
       }
       if (nameLower.includes('career') || nameLower.includes('advisor')) {
-        console.log('Matched Career');
         return 'https://recruiter-bot-plus.lovable.app/';
       }
-      console.log('No match found for:', filename);
       return '';
-    } catch (error) {
-      console.log('Error in getExternalLinkForFullstack:', error);
+    } catch (_) {
       return '';
     }
   };
