@@ -16,12 +16,12 @@ import restaurantImage from '../assets/Ai Agents/restuarant.png';
 import discordImage from '../assets/Ai Agents/Agent Discord.png';
 
 // Import data analysis images
-import booksAnalysisImage from '../assets/Data analysis /Books.svg';
-import cricketAnalysisImage from '../assets/Data analysis /cricket.svg';
-import airQualityImage from '../assets/Data analysis /air-quality-index.jpg';
-import netflixImage from '../assets/Data analysis /Netflix-Subscribers.png';
-import walmartImage from '../assets/Data analysis /walmart.jpg';
-import weatherImage from '../assets/Data analysis /Weather.jpg';
+import booksAnalysisImage from '../assets/Data analysis/Books.svg';
+import cricketAnalysisImage from '../assets/Data analysis/cricket.svg';
+import airQualityImage from '../assets/Data analysis/air-quality-index.jpg';
+import netflixImage from '../assets/Data analysis/Netflix-Subscribers.png';
+import walmartImage from '../assets/Data analysis/Walmart.jpg';
+import weatherImage from '../assets/Data analysis/Weather.jpg';
 
 // Import pipeline images
 import airflowImage from '../assets/Pipeline/Airflow.svg';
