@@ -127,31 +127,30 @@ const Projects = () => {
       const filename = (src.split('/').pop() || '');
       const nameLower = filename.toLowerCase();
       
-      // Debug logging
-      console.log('Checking filename:', filename, 'lowercase:', nameLower);
+      console.log('Checking fullstack filename:', filename, 'lowercase:', nameLower);
       
-      // Specific mappings per user request
-      if (filename === 'Netflix.png' || nameLower === 'netflix.png') {
+      // Use "includes" so it still works after hashing in production builds
+      if (nameLower.includes('netflix')) {
         console.log('Matched Netflix');
         return 'https://velvety-sunflower-83a500.netlify.app/';
       }
-      if (filename === 'Aitools.png' || nameLower === 'aitools.png') {
+      if (nameLower.includes('aitools')) {
         console.log('Matched Aitools');
         return 'https://willowy-dusk-9b8224.netlify.app/';
       }
-      if (filename === 'Apple.png' || nameLower === 'apple.png') {
+      if (nameLower.includes('apple')) {
         console.log('Matched Apple');
         return 'https://apple-clone-hazel-tau.vercel.app/';
       }
-      if (filename === 'Nature.png' || nameLower === 'nature.png') {
+      if (nameLower.includes('nature')) {
         console.log('Matched Nature');
         return 'https://v0-nature-webapp-integration.vercel.app/sunny';
       }
-      if (filename === 'amazon.png' || nameLower === 'amazon.png') {
+      if (nameLower.includes('amazon')) {
         console.log('Matched Amazon');
         return 'https://ui-reversal-art.lovable.app/';
       }
-      if (filename === 'weather.png' || nameLower === 'weather.png') {
+      if (nameLower.includes('weather')) {
         console.log('Matched Weather');
         return 'https://global-forecast-nexus.lovable.app/';
       }
@@ -167,7 +166,7 @@ const Projects = () => {
         console.log('Matched Career');
         return 'https://recruiter-bot-plus.lovable.app/';
       }
-      console.log('No match found for:', filename);
+      console.log('No match found for fullstack image:', filename);
       return '';
     } catch (error) {
       console.log('Error in getExternalLinkForFullstack:', error);
