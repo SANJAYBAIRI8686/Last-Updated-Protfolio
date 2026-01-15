@@ -22,6 +22,10 @@ import airQualityImage from '../assets/Data analysis/air-quality-index.jpg';
 import netflixImage from '../assets/Data analysis/Netflix-Subscribers.png';
 import walmartImage from '../assets/Data analysis/Walmart.jpg';
 import weatherImage from '../assets/Data analysis/Weather.jpg';
+import customerChurnImage from '../assets/Data analysis/Customer Chrun .png';
+import ecomDashboardImage from '../assets/Data analysis/Ecom dashboard.png';
+import ecommerceSalesImage from '../assets/Data analysis/Ecommerce sales.png';
+import retailSalesImage from '../assets/Data analysis/Retail sales .png';
 
 // Import pipeline images
 import airflowImage from '../assets/Pipeline/Airflow.svg';
@@ -30,24 +34,32 @@ import awsApiImage from '../assets/Pipeline/awsapi.svg';
 
 
 const Projects = () => {
-	// Load dashboard PNG images using valid literal glob patterns (match capitalized 'Dashboards')
+	// Load dashboard PNG images from /src/assets/Dashboards
 	const dashboardImages = useMemo(() => {
-		const gA = import.meta.glob('/src/assets/Dashboards/*.png', { eager: true, query: '?url', import: 'default' });
-		const gB = import.meta.glob('/src/assets/Dashboards/**/*.png', { eager: true, query: '?url', import: 'default' });
+		try {
+			// Use paths relative to this file (src/components/Projects.jsx)
+			const gA = import.meta.glob('../assets/Dashboards/*.png', { eager: true, import: 'default' });
+			const gB = import.meta.glob('../assets/Dashboards/**/*.png', { eager: true, import: 'default' });
 
-		const urls = [
-			...Object.values(gA),
-			...Object.values(gB),
-		];
-		const unique = Array.from(new Set(urls));
-		unique.sort();
-		return unique.slice(0, 9);
+			const urls = [
+				...Object.values(gA),
+				...Object.values(gB),
+			];
+			const unique = Array.from(new Set(urls));
+			unique.sort();
+			console.log('Dashboard images loaded:', unique.length, unique);
+			return unique.slice(0, 9);
+		} catch (error) {
+			console.error('Error loading dashboard images:', error);
+			return [];
+		}
 	}, []);
 
   // Load Full Stack images with custom ordering
   const fullstackImages = useMemo(() => {
-    const gA = import.meta.glob('/src/assets/Fullstack/*.png', { eager: true, query: '?url', import: 'default' });
-    const gB = import.meta.glob('/src/assets/Fullstack/**/*.png', { eager: true, query: '?url', import: 'default' });
+    // Use paths relative to this file (src/components/Projects.jsx)
+    const gA = import.meta.glob('../assets/Fullstack/*.png', { eager: true, import: 'default' });
+    const gB = import.meta.glob('../assets/Fullstack/**/*.png', { eager: true, import: 'default' });
     const urls = [
       ...Object.values(gA),
       ...Object.values(gB),
@@ -112,36 +124,53 @@ const Projects = () => {
 
   const getExternalLinkForFullstack = (src) => {
     try {
-      const last = (src.split('/').pop() || '');
-      const nameLower = last.toLowerCase();
-
-      // Robust matching (works with Vite hashed filenames)
-      if (nameLower.includes('netflix')) {
+      const filename = (src.split('/').pop() || '');
+      const nameLower = filename.toLowerCase();
+      
+      // Debug logging
+      console.log('Checking filename:', filename, 'lowercase:', nameLower);
+      
+      // Specific mappings per user request
+      if (filename === 'Netflix.png' || nameLower === 'netflix.png') {
+        console.log('Matched Netflix');
         return 'https://velvety-sunflower-83a500.netlify.app/';
       }
-      if (nameLower.includes('aitools')) {
+      if (filename === 'Aitools.png' || nameLower === 'aitools.png') {
+        console.log('Matched Aitools');
         return 'https://willowy-dusk-9b8224.netlify.app/';
       }
-      if (nameLower.includes('apple')) {
+      if (filename === 'Apple.png' || nameLower === 'apple.png') {
+        console.log('Matched Apple');
         return 'https://apple-clone-hazel-tau.vercel.app/';
       }
-      if (nameLower.includes('nature')) {
+      if (filename === 'Nature.png' || nameLower === 'nature.png') {
+        console.log('Matched Nature');
         return 'https://v0-nature-webapp-integration.vercel.app/sunny';
       }
-      if (nameLower.includes('amazon')) {
+      if (filename === 'amazon.png' || nameLower === 'amazon.png') {
+        console.log('Matched Amazon');
         return 'https://ui-reversal-art.lovable.app/';
       }
-      if (nameLower.includes('weather')) {
+      if (filename === 'weather.png' || nameLower === 'weather.png') {
+        console.log('Matched Weather');
         return 'https://global-forecast-nexus.lovable.app/';
       }
-      if (nameLower.includes('screenshot 2025-10-16') || nameLower.includes('mentalhealth')) {
+      if (nameLower.includes('screenshot 2025-10-16')) {
+        console.log('Matched Screenshot');
+        return 'https://calmweave-guide-82157.lovable.app/';
+      }
+      if (nameLower.includes('mentalhealth')) {
+        console.log('Matched Mental Health');
         return 'https://calmweave-guide-82157.lovable.app/';
       }
       if (nameLower.includes('career') || nameLower.includes('advisor')) {
+        console.log('Matched Career');
         return 'https://recruiter-bot-plus.lovable.app/';
       }
+      console.log('No match found for:', filename);
       return '';
-    } catch (_) {
+    } catch (error) {
+      console.log('Error in getExternalLinkForFullstack:', error);
       return '';
     }
   };
@@ -218,6 +247,102 @@ const Projects = () => {
 			<section id="data-analysis-projects" className="project-showcase-section">
 				<h2>Data Analysis Projects</h2>
 				<div className="data-analysis-grid">
+					{/* New Card 1 */}
+					<div className="data-analysis-card">
+						<a href="https://github.com/SANJAYBAIRI8686/E-Commerce-Sales-Performance-Customer-Analytics" target="_blank" rel="noopener noreferrer" style={{ display: 'block', cursor: 'pointer' }}>
+							<img src={ecommerceSalesImage} alt="E-Commerce Sales Performance" className="data-analysis-image" />
+						</a>
+						<div className="data-analysis-content">
+							<h3>
+								<a href="https://github.com/SANJAYBAIRI8686/E-Commerce-Sales-Performance-Customer-Analytics" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+									E-Commerce Sales Performance & Customer Analytics
+								</a>
+							</h3>
+							<div className="weather-analysis-content">
+								<p>Conducted comprehensive analysis of 397K+ e-commerce transactions spanning 13 months, delivering revenue, customer, and product insights for a UK-based online retail business operating across 38 countries.</p>
+								<p>Built a production-ready analytics workflow using Python (Pandas, NumPy, SciPy) and SQL (SQLite), including data cleaning, feature engineering, complex aggregations, and window-based analysis.</p>
+								<p>Designed and executed RFM customer segmentation, identifying high-value "Champion" customers (21.5%) responsible for ~70% of total revenue, enabling targeted retention and loyalty strategies.</p>
+								<p>Performed cohort analysis to evaluate customer retention and lifecycle behavior, achieving 36.6% Month-1 retention and 26.6% Month-12 retention, significantly outperforming industry benchmarks.</p>
+								<p>Applied statistical analysis (correlation analysis, ANOVA) to validate business hypotheses and inform pricing, bundling, and promotional strategies.</p>
+								<p>Delivered actionable business recommendations projected to generate £1.6M+ incremental annual revenue through customer retention programs, geographic expansion, SKU rationalization, and loyalty initiatives.</p>
+								<p>Developed executive-level visualizations and reports using Matplotlib & Seaborn, translating complex data into clear insights for strategic decision-making.</p>
+								<p>Demonstrated strong business acumen, connecting analytics outputs directly to revenue optimization, customer lifetime value, operational efficiency, and market expansion decisions.</p>
+							</div>
+						</div>
+					</div>
+
+					{/* New Card 2 */}
+					<div className="data-analysis-card">
+						<a href="https://github.com/SANJAYBAIRI8686/Retail_Sales_Analysis" target="_blank" rel="noopener noreferrer" style={{ display: 'block', cursor: 'pointer' }}>
+							<img src={retailSalesImage} alt="Retail Sales Analysis" className="data-analysis-image" />
+						</a>
+						<div className="data-analysis-content">
+							<h3>
+								<a href="https://github.com/SANJAYBAIRI8686/Retail_Sales_Analysis" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+									Retail Sales Analysis - SQL Project
+								</a>
+							</h3>
+							<div className="weather-analysis-content">
+								<p>Analyzed 9,994 retail orders across 4 years (2014–2017) using SQL as the primary analytical tool (80%), delivering revenue, profitability, and customer insights to support retail sales optimization.</p>
+								<p>Designed and executed 60+ advanced SQL queries leveraging CTEs, window functions (ROW_NUMBER, RANK, LAG, LEAD, NTILE), complex joins, subqueries, and date functions to answer real-world business questions.</p>
+								<p>Built RFM customer segmentation directly in SQL, identifying that the top 10% of customers generate over 50% of total revenue, enabling targeted retention and VIP loyalty strategies.</p>
+								<p>Performed customer lifetime value (CLV) analysis to quantify long-term customer profitability and guide marketing investment decisions.</p>
+								<p>Conducted product, discount, and profitability analysis, revealing that discounts above 20% reduce profit margins by 35%, leading to recommendations for optimized tiered discounting.</p>
+								<p>Identified Technology as the highest-performing category ($836K revenue, 36.4% of total) and the West region as the strongest market, informing geographic and product focus strategies.</p>
+								<p>Delivered data-driven business recommendations projected to improve profit margins from 12.5% to 16% and generate $150K+ incremental annual revenue.</p>
+								<p>Supported SQL analysis with Python (pandas, matplotlib/seaborn) for visualization and executive-ready reporting in Jupyter Notebooks.</p>
+							</div>
+						</div>
+					</div>
+
+					{/* New Card 3 */}
+					<div className="data-analysis-card">
+						<a href="https://github.com/SANJAYBAIRI8686/Customer-Churn-Prediction-Project" target="_blank" rel="noopener noreferrer" style={{ display: 'block', cursor: 'pointer' }}>
+							<img src={customerChurnImage} alt="Customer Churn Prediction" className="data-analysis-image" />
+						</a>
+						<div className="data-analysis-content">
+							<h3>
+								<a href="https://github.com/SANJAYBAIRI8686/Customer-Churn-Prediction-Project" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+									Customer Churn Prediction End-to-End Machine Learning Project - Machine Learning Project
+								</a>
+							</h3>
+							<div className="weather-analysis-content">
+								<p>Built a production-ready machine learning solution to predict customer churn using 7,043 telecom customer records, enabling proactive retention strategies and reducing revenue loss.</p>
+								<p>Trained and evaluated multiple models (Logistic Regression, Random Forest, XGBoost), selecting Logistic Regression as the best performer with 84.03% ROC-AUC and strong interpretability.</p>
+								<p>Identified 87 high-risk customers through probability-based risk segmentation (High / Medium / Low), supporting targeted intervention campaigns.</p>
+								<p>Translated model outputs into business impact, projecting $21,800+ annual net savings, 250%+ ROI, and retention of 61 at-risk customers through cost-effective retention actions.</p>
+								<p>Performed end-to-end ML workflow including EDA, data preprocessing, feature encoding, scaling, stratified train-test split, model evaluation, and performance visualization.</p>
+								<p>Analyzed key churn drivers (contract type, tenure, monthly charges, service type), converting insights into actionable recommendations for pricing, contracts, onboarding, and service quality.</p>
+								<p>Developed risk-based retention strategies and a 90-day implementation roadmap, aligning predictive analytics with operational execution.</p>
+								<p>Saved trained models and preprocessing pipelines for reusability and deployment, enabling batch predictions and future API integration.</p>
+							</div>
+						</div>
+					</div>
+
+					{/* New Card 4 */}
+					<div className="data-analysis-card">
+						<a href="https://github.com/SANJAYBAIRI8686/E-Commerce-Customer-Dashboard" target="_blank" rel="noopener noreferrer" style={{ display: 'block', cursor: 'pointer' }}>
+							<img src={ecomDashboardImage} alt="E-Commerce Customer Dashboard" className="data-analysis-image" />
+						</a>
+						<div className="data-analysis-content">
+							<h3>
+								<a href="https://github.com/SANJAYBAIRI8686/E-Commerce-Customer-Dashboard" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+									E-Commerce-Customer-Dashboard
+								</a>
+							</h3>
+							<div className="weather-analysis-content">
+								<p>Conducted end-to-end analysis of e-commerce transaction data to uncover customer behavior, revenue drivers, and product relationships, supporting data-driven sales and retention strategies.</p>
+								<p>Performed RFM customer segmentation to classify customers into Champions, Loyal, At-Risk, and Lost, enabling targeted marketing and personalized retention initiatives.</p>
+								<p>Built customer churn prediction models using machine learning (Random Forest) to identify customers likely to disengage and inform proactive retention actions.</p>
+								<p>Calculated and visualized Customer Lifetime Value (CLV) by segment to prioritize high-value customers and optimize marketing spend.</p>
+								<p>Executed market basket analysis to identify frequently purchased product combinations, supporting cross-sell and promotional optimization.</p>
+								<p>Analyzed historical revenue trends and developed revenue forecasting models to support planning and executive decision-making.</p>
+								<p>Designed an executive-level analytics dashboard combining KPIs, trends, segmentation, and forecasts using Matplotlib, Seaborn, and Plotly.</p>
+								<p>Delivered actionable business recommendations focused on revenue optimization, customer retention, and product strategy.</p>
+							</div>
+						</div>
+					</div>
+
 					{/* Books Analysis Card */}
 					<div className="data-analysis-card">
 						<img src={booksAnalysisImage} alt="Books Analysis" className="data-analysis-image books-image" />

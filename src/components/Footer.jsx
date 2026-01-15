@@ -6,7 +6,6 @@ import linkedinIcon from '../assets/Social Media/linkedin.png';
 import githubIcon from '../assets/Social Media/github.png';
 import twitterIcon from '../assets/Social Media/twitter.png';
 import redditIcon from '../assets/Social Media/reddit.png';
-import resumePdf from '../assets/SANJAY BSK.pdf';
 
 const IconLink = ({ href, label, children }) => (
   <a href={href} target="_blank" rel="noreferrer" aria-label={label} className="footer-icon lg">
@@ -39,9 +38,6 @@ const Footer = () => {
         <div className="footer-left">
           <a href="mailto:bairisanjaykumar1298@gmail.com" className="footer-email">
             bairisanjaykumar1298@gmail.com
-          </a>
-          <a href={resumePdf} className="footer-resume" target="_blank" rel="noopener noreferrer">
-            Resume
           </a>
         </div>
         

@@ -3,24 +3,6 @@
   margin: 0 50px;
   padding: 0 0 4rem;
   overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-.projects-page * {
-  box-sizing: border-box;
-}
-
-/* Global text wrapping for all content */
-.projects-page p,
-.projects-page h1,
-.projects-page h2,
-.projects-page h3,
-.projects-page h4,
-.projects-page h5,
-.projects-page h6 {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -29,51 +11,12 @@
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    max-width: 100%;
   }
 
   .projects-page > section {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    max-width: 100%;
-    box-sizing: border-box;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  /* Ensure all headings wrap properly on mobile */
-  .projects-page h1,
-  .projects-page h2,
-  .projects-page h3,
-  .projects-page h4,
-  .projects-page h5,
-  .projects-page h6 {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: 100%;
-  }
-  
-  /* Ensure text content areas respect viewport width */
-  .projects-page .project-content,
-  .projects-page .card-content,
-  .projects-page .section-card,
-  .projects-page p,
-  .projects-page .dashboard-content,
-  .projects-page .data-analysis-content,
-  .projects-page .pipeline-project-content,
-  .projects-page .cloud-project-content,
-  .projects-page .ai-agent-text {
-    max-width: 100%;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  /* Prevent horizontal scroll */
-  body {
-    overflow-x: hidden;
   }
 }
 
@@ -103,8 +46,9 @@
   border-radius: 0;
   overflow: hidden;
   padding: 2rem 3rem 3rem 3rem;
-  width: 100%;
-  max-width: 100%;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 
@@ -137,9 +81,6 @@
   line-height: 1.6;
   font-size: 1.1rem;
   margin: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 .projects-hero-gif {
@@ -166,46 +107,28 @@
 @media (max-width: 768px) {
   .projects-hero-section {
     padding: 1.5rem 1rem;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
     min-height: auto;
   }
 
   .projects-hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
   }
 
   .projects-hero-text {
     gap: 1rem;
     text-align: center;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
   }
 
   .projects-hero-title {
     font-size: 2rem;
     line-height: 1.3;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: 100%;
   }
 
   .projects-hero-subtitle {
     font-size: 1rem;
     line-height: 1.5;
     padding: 0 0.5rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: 100%;
   }
 
   .projects-hero-gif {
@@ -532,35 +455,12 @@
   border: 1px solid #e5eaf3;
   border-radius: 12px;
   min-height: 280px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  box-sizing: border-box;
 }
-.section-text p { 
-  color: #475569; 
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
-}
+.section-text p { color: #475569; }
 
 @media (max-width: 900px) {
   .projects-section-body,
-  .projects-section-body.reverse { 
-    grid-template-columns: 1fr; 
-  }
-  
-  .section-card {
-    max-width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .section-text p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
+  .projects-section-body.reverse { grid-template-columns: 1fr; }
 }
 
 .subcards-grid {
@@ -700,10 +600,9 @@
     padding: 1rem;
     border-radius: 0;
     margin: 0;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
   }
   
   #dashboards-section h2 {
@@ -711,8 +610,6 @@
     font-size: 2rem;
     text-align: center;
     margin-bottom: 1.5rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
   }
   
   #dashboards-section .dashboard-rows {
@@ -819,10 +716,6 @@
   line-height: 1.5rem;
   white-space: pre-wrap;
   text-align: justify;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
 }
 
 .dashboard-item {
@@ -834,13 +727,6 @@
 @media (max-width: 900px) {
   .dashboard-row { grid-template-columns: 1fr; }
   .dashboard-card { height: 360px; }
-  
-  .dashboard-content {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
 }
 
 /* Fullstack gallery - two items per row layout */
@@ -1369,6 +1255,13 @@
   object-position: center;
   border-bottom: 1px solid #e5e7eb;
   background: #f8fafc;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for clickable images */
+.data-analysis-card > a:hover .data-analysis-image {
+  opacity: 0.85;
+  transform: scale(1.02);
 }
 
 /* Make Walmart and Weather images fill the card completely */
@@ -1417,20 +1310,10 @@
   .data-analysis-content {
     padding: 1rem;
     border-radius: 0;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
   .data-analysis-content h3 {
     font-size: 1.2rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-  
-  .data-analysis-content p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
   }
 }
 
@@ -1439,9 +1322,6 @@
   color: #2563eb;
   margin-bottom: 1rem;
   font-weight: 600;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 .data-analysis-content p {
@@ -1449,9 +1329,6 @@
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 /* Weather Analysis Expandable Content */
@@ -1630,20 +1507,12 @@
   color: #2563eb;
   margin-bottom: 1rem;
   font-weight: 600;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
 }
 
 .cloud-project-content p {
   font-size: 0.95rem;
   color: #6b7280;
   line-height: 1.8;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
   margin: 0 0 1rem 0;
   text-align: justify;
   letter-spacing: 0.01em;
@@ -1660,10 +1529,6 @@
   orphans: 2;
   color: #52555f;
   font-size: 1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-  box-sizing: border-box;
 }
 
 .cloud-project-content > div {
@@ -1676,14 +1541,13 @@
     gap: 0;
     padding: 0;
     margin: 0;
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    max-width: none;
     background: none;
   }
   
   .cloud-project-card {
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
     margin: 0 0 1rem 0;
     border-radius: 0;
     border-left: none;
@@ -1697,16 +1561,6 @@
   
   .cloud-project-content {
     padding: 1rem;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .cloud-project-content h3,
-  .cloud-project-content p,
-  .cloud-project-content > div {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
   }
 }
 
@@ -1748,10 +1602,9 @@
     padding: 1rem;
     border-radius: 0;
     margin: 0;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
   }
   
   #data-pipeline-projects h2 {
@@ -1841,9 +1694,6 @@
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.3;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 .pipeline-project-content p {
@@ -1851,9 +1701,6 @@
   color: #6b7280;
   line-height: 1.6;
   margin: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 /* Mobile responsiveness for pipeline project cards */
@@ -1882,21 +1729,14 @@
   
   .pipeline-project-content {
     padding: 1rem;
-    max-width: 100%;
-    box-sizing: border-box;
   }
   
   .pipeline-project-content h3 {
     font-size: 1.1rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
   }
   
   .pipeline-project-content p {
     font-size: 0.9rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
   }
 }
 
@@ -1975,22 +1815,11 @@
   .ai-agent-text {
     padding: 1rem;
     margin: 0;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 
   .ai-agent-text h3 {
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-  
-  .ai-agent-text p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
   }
 }
 
@@ -2023,20 +1852,12 @@
   color: #2563eb;
   margin: 0 0 1rem 0;
   font-weight: 600;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
 }
 
 .ai-agent-text p {
   font-size: 1rem;
   color: #6b7280;
   line-height: 1.6;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-  max-width: 100%;
   text-align: justify;
 }
 
@@ -2060,15 +1881,14 @@
 @media (max-width: 768px) {
   .ai-agent-projects-section {
     padding: 2rem 0;
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
   }
 
   .ai-agent-cards-container {
     padding: 0;
     margin: 0;
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    max-width: none;
     background: none;
     border-radius: 0;
   }
@@ -2081,8 +1901,7 @@
   }
   
   .ai-agent-card {
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
     height: 250px;
     border-radius: 0;
     border-left: none;
@@ -2090,19 +1909,10 @@
   }
   
   .ai-agent-text {
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 1rem;
     text-align: left;
-    box-sizing: border-box;
-  }
-  
-  .ai-agent-text h3,
-  .ai-agent-text p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
   }
   
   .ai-agent-projects-section h2 {
